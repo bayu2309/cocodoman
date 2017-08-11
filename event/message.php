@@ -7,9 +7,6 @@ class EventMessage extends LineBotFunctions{
   public function index($event){
     if($this->botEventType($event) == "message"){
       if($this->botEventMessageType($event) == "text"){
-        $file = fopen("token.txt","w+");
-        fwrite($file,$this->botEventReplyToken($event) . "\n");
-        fclose($file);
         switch ($this->botEventMessageText($event)) {
           // Button Template
           case 'buttons':
